@@ -1,0 +1,53 @@
+  var psA = [9,4,3];
+    var psB = [2,5,5];
+    var spA = [10,8,6];
+    var spB = [2,9,9];
+
+    var sumOfpsA = psA.reduce(my);
+    function my(total, value) {
+        return total + value; 
+    }
+    var sumOfpsB = psB.reduce(my);
+    function my(total, value) {
+        return total + value; 
+    }
+    var sumOfspA = spA.reduce(my);
+    function my(total, value) {
+        return total + value; 
+    }
+    var sumOfspB = spB.reduce(my);
+    function my(total, value) {
+        return total + value; 
+    }
+    
+   
+    /*var m  = (n / d);
+    calculating hcf of n & d 
+    */
+
+     /* var f = n / 32;
+      var g = d / 32;
+      console.log(f + "/" + g);*/
+
+      function hcf_two_numbers(x, y) {
+          if ((typeof x !== 'number') || (typeof y !== 'number'))
+              return false;
+          x = Math.abs(x);
+          y = Math.abs(y);
+          while (y) {
+              var t = y;
+              y = x % y;
+              x = t;
+          }
+          return x;
+      }
+      var n = (sumOfpsA * sumOfspB);
+      var d = (sumOfpsB * sumOfspA);
+      /*console.log(hcf_two_numbers(n,d));// prints the output*/
+
+      var p = hcf_two_numbers(n, d);
+      
+
+      var f = n / p;
+      var g = d / p;
+      console.log(f + "/" + g);
